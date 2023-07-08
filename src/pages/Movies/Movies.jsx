@@ -15,7 +15,7 @@ const Movies = () => {
   useEffect(() => {
     if (query === '') return;
     setInputText(query);
-    console.log(query);
+    // console.log(query);
 
     async function fetch() {
       try {

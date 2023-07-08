@@ -22,10 +22,10 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    //     Authorization: 'Bearer 2df474d1194b369ae7531f50a435506c',
 
     Authorization:
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGY0NzRkMTE5NGIzNjlhZTc1MzFmNTBhNDM1NTA2YyIsInN1YiI6IjY0OTc0MzE0ZWI3OWMyMDBjNTZkNmY0ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xcsy2n0hTAWYEvaWVUI6qzFMwM0PuPy5o3c_EsP1eMg',
+    // Authorization: 'Bearer 2df474d1194b369ae7531f50a435506c',
   },
 };
 export const getTrendMovies = async () => {
@@ -53,10 +53,9 @@ export const getMovieDetails = async id => {
 
 export const getAddition = async (id, params) => {
   const { data } = await axios.get(
-    `movie/${id}/credits?language=en-US`,
+    `movie/${id}/${params}?language=en-US`,
     options
   );
-  console.log(data);
   return data;
 };
 
