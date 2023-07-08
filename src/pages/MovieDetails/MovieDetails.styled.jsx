@@ -23,10 +23,6 @@ export const Title = styled.h2`
   margin-bottom: 15px;
 `;
 
-// export const Title = styled.h3`
-//   margin-bottom: 15px;
-// `;
-
 export const Article = styled.article`
   display: flex;
   gap: 20px;
@@ -38,12 +34,3 @@ export const Text = styled.p`
   font-weight: 400;
   margin-bottom: 20px;
 `;
-
-// .item {
-//   font-size: 19px;
-//   font-weight: 500;
-// }
-
-// .item:first-child {
-//   margin-bottom: 10px;
-// }

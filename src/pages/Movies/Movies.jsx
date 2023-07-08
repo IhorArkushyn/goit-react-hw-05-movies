@@ -15,12 +15,10 @@ const Movies = () => {
   useEffect(() => {
     if (query === '') return;
     setInputText(query);
-    // console.log(query);
 
     async function fetch() {
       try {
         const { results } = await getMovieByQuery(query);
-        // console.log(results);
         setMovieisList(results);
 
         if (results.length === 0) {
@@ -31,21 +29,14 @@ const Movies = () => {
       } catch (error) {
         console.log(error);
       }
-      // finally {
-      //   // eslint-disable-next-line react-hooks/exhaustive-deps
-      //   query = '';
-      // }
     }
     fetch();
   }, [query]);
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    // let form = event.target;
     let searchQuery = event.target.elements.movies.value;
     setSearchParams({ query: searchQuery });
-    // searchQuery = '';
-    // console.log(form);
   };
 
   const handleInputChange = event => {
@@ -64,17 +55,7 @@ const Movies = () => {
         />
         <button type="submit">
           <MdSearch />
-          <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            // hideProgressBar={false}
-            // newestOnTop={false}
-            closeOnClick
-            // rtl={false}
-            // pauseOnFocusLoss
-            // draggable
-            // pauseOnHover
-          />
+          <ToastContainer position="top-center" autoClose={2000} closeOnClick />
         </button>
       </form>
       <ul>

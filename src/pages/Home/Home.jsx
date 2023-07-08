@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-// import { getMovies } from 'Api/Api';
 import { Link, useLocation } from 'react-router-dom';
 import { getTrendMovies } from 'helpers/api';
 
@@ -39,20 +38,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// const Home = () => {
-//   return (
-//     <main>
-//       <h1>Tranding today</h1>
-
-//       <img src="https://via.placeholder.com/960x240" alt="" />
-//       <p>
-//         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-//         laboriosam placeat incidunt rem illum animi nemo quibusdam quia
-//         voluptatum voluptate.
-//       </p>
-//     </main>
-//   );
-// };
-
-// export default Home;

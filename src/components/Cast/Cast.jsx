@@ -36,9 +36,10 @@ const Cast = () => {
                   alt={`${actor.name} profile`}
                 />
               )}
-
               <S.Name>{actor.name}</S.Name>
-              <S.Character>Character: {actor.character}</S.Character>
+              {actor.character && (
+                <S.Character>Character: {actor.character}</S.Character>
+              )}
             </li>
           );
         })}
