@@ -34,7 +34,7 @@ const MovieDetails = () => {
     <div>
       <S.Wrapper>
         <BiArrowBack />
-        <S.LinkTo to={backLinkLocationRef.current}>go back</S.LinkTo>
+        <S.LinkTo to={backLinkLocationRef.current}>GO BACK</S.LinkTo>
       </S.Wrapper>
       <S.Article>
         <img

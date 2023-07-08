@@ -24,7 +24,7 @@ const Cast = () => {
       <S.CastList>
         {cast.map(actor => {
           return (
-            <S.Actor key={actor.id}>
+            <li key={actor.id}>
               {actor.profile_path ? (
                 <S.Img
                   src={`${url}${actor.profile_path}`}
@@ -38,8 +38,8 @@ const Cast = () => {
               )}
 
               <S.Name>{actor.name}</S.Name>
-              <p>Character: {actor.character}</p>
-            </S.Actor>
+              <S.Character>Character: {actor.character}</S.Character>
+            </li>
           );
         })}
       </S.CastList>

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   width: 130px;
-  font-size: 20px;
+  font-size: 14px;
+  padding: 8px 15px;
   color: black;
   margin-bottom: 20px;
   background-color: rgb(227, 192, 192);
