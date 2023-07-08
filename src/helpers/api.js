@@ -51,11 +51,12 @@ export const getMovieDetails = async id => {
   return data;
 };
 
-export const getAddition = async (id, param) => {
+export const getAddition = async (id, params) => {
   const { data } = await axios.get(
-    `movie/${id}/${param}?language=en-US`,
+    `movie/${id}/credits?language=en-US`,
     options
   );
+  console.log(data);
   return data;
 };
 

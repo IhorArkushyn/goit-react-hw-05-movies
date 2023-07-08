@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import { getMovieDetails } from 'helpers/api';
-import * as S from 'pages/MovieDetails.styled';
+import * as S from 'pages/MovieDetails/MovieDetails.styled';
 import { BiArrowBack } from 'react-icons/bi';
 
 const MovieDetails = () => {

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getMovieDetails } from 'helpers/api';
+import { getMovieByQuery } from 'helpers/api';
 import { MdSearch } from 'react-icons/md';
 
 const Movies = () => {
@@ -10,35 +10,42 @@ const Movies = () => {
   const [moviesList, setMovieisList] = useState([]);
   const [searchText, setInputText] = useState('');
   const location = useLocation();
-
   const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
     if (query === '') return;
     setInputText(query);
-    const params = 'search/movie';
-    const queryParams = `query=${query}`;
+    console.log(query);
 
     async function fetch() {
       try {
-        const { data } = await getMovieDetails(params, queryParams);
-        setMovieisList(data.results);
+        const { results } = await getMovieByQuery(query);
+        // console.log(results);
+        setMovieisList(results);
 
-        if (data.results.length === 0) {
+        if (results.length === 0) {
           toast('Sorry, but nothing found');
+
           return;
         }
       } catch (error) {
         console.log(error);
       }
+      // finally {
+      //   // eslint-disable-next-line react-hooks/exhaustive-deps
+      //   query = '';
+      // }
     }
     fetch();
   }, [query]);
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    const searchQuery = event.target.elements.movies.value;
+    // let form = event.target;
+    let searchQuery = event.target.elements.movies.value;
     setSearchParams({ query: searchQuery });
+    // searchQuery = '';
+    // console.log(form);
   };
 
   const handleInputChange = event => {
@@ -60,14 +67,13 @@ const Movies = () => {
           <ToastContainer
             position="top-center"
             autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
+            // hideProgressBar={false}
+            // newestOnTop={false}
             closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="colored"
+            // rtl={false}
+            // pauseOnFocusLoss
+            // draggable
+            // pauseOnHover
           />
         </button>
       </form>
